@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;600&family=Manrope:wght@800&family=Outfit:wght@100;200;600&family=Red+Hat+Display:wght@300&display=swap" rel="stylesheet">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        body {
+            font-family: 'Kumbh Sans', sans-serif;
+            position: absolute;
+            margin: 40px 100px 10px 100px;
+            width: 100%;
+        }
+        
+        .header-container1 {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header-container2 {
+            width: 40%;
+            position: relative;
+        }
+        
+        .image-avatar {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .cart {
+            /* position: absolute;
+            float: right;
+            right: 85px;
+            top: -32px; */
+            position: fixed;
+            float: right;
+            right: 175px;
+            top: 5px;
+        }
+        
+        .icon-cart {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .cart-count {
+            padding: 1px 8px;
+            background: hsl(26, 100%, 55%);
+            color: #fff;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            display: block;
+        }
+        
+        .avatar {
+            margin-left: 40px;
+            margin-top: -10px;
+            position: absolute;
+            float: right;
+            right: 10px;
+        }
+        
+        .body-container {
+            display: flex;
+            width: 85%;
+            margin-top: 50px;
+        }
+        
+        .img-container {
+            width: 50%;
+        }
+        
+        .text-container {
+            width: 50%;
+        }
+        
+        .head1 {
+            color: hsl(26, 100%, 55%);
+            font-weight: 700;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+        
+        .priceOffer {
+            display: flex;
+            justify-content: start;
+            margin-bottom: 7px;
+        }
+        
+        .offered-price {
+            font-weight: 700;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+        
+        .offer {
+            margin-left: 20px;
+            color: hsl(26, 100%, 55%);
+            padding: 4px;
+            font-size: 12px;
+            background: hsl(25, 100%, 94%);
+            border-radius: 3px;
+            font-weight: 700;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: hsl(219, 9%, 45%);
+            font-size: 12px;
+        }
+        
+        .count-container {
+            display: flex;
+            width: 60%;
+            margin-top: 20px;
+        }
+        
+        .count {
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+            padding: 5px;
+            background: hsl(223, 64%, 98%);
+            border-radius: 4px;
+        }
+        
+        .image-minus {
+            width: 10px;
+            height: 5px;
+            margin-left: -15px;
+        }
+        
+        .image-plus {
+            width: 10px;
+            height: 10px;
+            margin-right: -15px;
+        }
+        
+        .zero {
+            font-weight: 700;
+            font-size: 12px;
+            margin-top: 3px;
+        }
+        
+        .cart2 {
+            display: flex;
+            width: 60%;
+            margin-left: 20px;
+            font-size: 12px;
+            padding: 7px;
+            background: hsl(26, 100%, 55%);
+            border-radius: 4px;
+            color: #fff;
+        }
+        
+        .icon-cart2 {
+            width: 15px;
+            height: 15px;
+            margin-left: 25px;
+        }
+        
+        .addtocart {
+            margin-left: 15px;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 12px;
+            color: hsl(219, 9%, 45%);
+        }
+        
+        .cart-open {
+            /* display: none; */
+            background: #fff;
+            width: 250px;
+            border-radius: 5px;
+            position: absolute;
+            top: 22px;
+            right: 267px;
+            box-shadow: 1px 1px 20px #ccc;
+            height: 185px;
+        }
+        
+        .cart-items-title {
+            font-size: 12px;
+            padding: 0px 0px 16px 20px;
+            font-weight: 800;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .description {
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 12px;
+        }
+        
+        .btn-checkout {
+            text-align: center;
+            font-size: 12px;
+            padding: 10px;
+            margin: 16px 10px 0 15px;
+            background: hsl(26, 100%, 55%);
+            width: 200px;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .delete {
+            width: 10px;
+            height: 12px;
+            margin-top: 5px;
+        }
+        
+        .active-img {
+            width: 292px;
+            height: 261px;
+        }
+        
+        .thampnail-items {
+            width: 70px;
+            height: 70px;
+            border-radius: 4px;
+        }
+        
+        .thampnail-items1 {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+        }
+        
+        .totalcart {
+            font-weight: 700;
+        }
+        
+        .image-avatar:hover {
+            border-radius: 50px;
+            border: 2px solid hsl(26, 100%, 55%);
+        }
+        
+        .emptyCart {
+            display: none;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .headerItem {
+            display: flex;
+            width: 85%;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 30px;
+            position: relative;
+        }
+        
+        .Collections:hover {
+            border-bottom: 1px solid hsl(26, 100%, 55%);
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+    </script>
+    <div>
+        <div class="headerItem">
+            <div class="header-container1">
+                <div style="font-weight: 900;">Sneakers</div>
+                <div class="Collections">Collections</div>
+                <div class="Men">Men</div>
+                <div class="Women">Women</div>
+                <div class="About">About</div>
+                <div class="Contact">Contact</div>
+            </div>
+            <div class="header-container2">
+                <div class="cart">
+                    <div style="position: relative;top: 16px;left: 10px;">
+                        <p class="cart-count"></p>
+                    </div>
+                    <img class="icon-cart" src="./images/icon-cart.svg">
+
+                </div>
+
+                <div class="avatar"><img class="image-avatar" src="./images/image-avatar.png"></div>
+            </div>
+
+        </div>
+        <div class="body-container">
+            <div class="img-container"><img>
+                <div><img class="active-img" src="./images/image-product-1.jpg"></div>
+                <div>
+                    <img class="thampnail-items" src="./images/image-product-1-thumbnail.jpg">
+                    <img class="thampnail-items" src="./images/image-product-2-thumbnail.jpg">
+                    <img class="thampnail-items" src="./images/image-product-3-thumbnail.jpg">
+                    <img class="thampnail-items" src="./images/image-product-4-thumbnail.jpg">
+                </div>
+            </div>
+            <div class="text-container">
+                <h6 class="head1">SNEAKER COMPANY</h6>
+                <h2 class="head2">Fall Limited Edition Sneakers</h2>
+                <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+                <br/>
+                <div class="priceOffer">
+                    <div class="offered-price">$125.00</div>
+                    <div class="offer">50%</div>
+                </div>
+                <div class="original-price">$250.00</div>
+                <div class="count-container">
+                    <div class="count">
+                        <div><img class="image-minus" src="./images/icon-minus.svg"></div>
+                        <div class="zero"></div>
+                        <div><img class="image-plus" src="./images/icon-plus.svg"></div>
+                    </div>
+
+                    <div class="cart2">
+                        <img class="icon-cart2" src="./images/icon-cart-white.svg">
+                        <div class="addtocart">Add to cart</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- popup -->
+        <div class="cart-open" style="display: none;">
+            <h6 class="cart-items-title">Cart</h6>
+            <div class="description">
+                <div class="cart-image"><img class="thampnail-items1" src="./images/image-product-1-thumbnail.jpg"></div>
+                <div class="cart-items">Fall Limited Edition Sneakers
+                    <div style="display: flex;">
+                        <div class="calculation"></div>&nbsp;
+                        <div class="totalcart"></div>
+                    </div>
+                </div>
+                <div class="delete-icon">
+                    <img class="delete" src="./images/icon-delete.svg"></div>
+            </div>
+            <div class="btn-checkout">Checkout</div>
+            <div class="emptyCart">Your cart is empty</div>
+        </div>
+    </div>
+    <script>
+        var a = 0;
+        var cartCount = 0;
+        document.getElementsByClassName("zero")[0].innerHTML = a;
+        document.getElementsByClassName("image-plus")[0].addEventListener('click', addItem)
+        document.getElementsByClassName("image-minus")[0].addEventListener('click', removeItem)
+
+        function addItem() {
+            a++;
+            document.getElementsByClassName("zero")[0].innerHTML = a;
+            console.log(a);
+        }
+        document.getElementsByClassName("cart-count")[0].style.display = "none";
+        document.getElementsByClassName("cart")[0].style.top = "40px";
+
+        function removeItem() {
+            a--;
+            document.getElementsByClassName("zero")[0].innerHTML = a;
+            console.log(a);
+        }
+        document.getElementsByClassName("cart-count")[0].innerHTML = cartCount;
+        document.getElementsByClassName("cart2")[0].addEventListener('click', addtoCarts);
+
+        function addtoCarts() {
+
+            document.getElementsByClassName("cart-count")[0].innerHTML = a;
+            if (!a) {
+                document.getElementsByClassName("cart-count")[0].style.display = "none";
+                document.getElementsByClassName("cart")[0].style.top = "40px";
+            } else {
+                document.getElementsByClassName("cart-count")[0].style.display = "block";
+                document.getElementsByClassName("cart")[0].style.top = "0px";
+            }
+            let total = (125 * a);
+            let c = document.getElementsByClassName("calculation")[0].innerHTML = "$" + 125 + " " + '*' + ' ' + a;
+            document.getElementsByClassName("totalcart")[0].innerHTML = "$" + total;
+
+        }
+
+
+        document.getElementsByClassName("icon-cart")[0].addEventListener("click", popup);
+
+        function popup() {
+            let sty = document.getElementsByClassName("cart-open")[0].style.display;
+            if (sty === "none") {
+                document.getElementsByClassName("cart-open")[0].style.display = "block";
+                if (!a) {
+                    document.getElementsByClassName("description")[0].style.display = "none";
+                    document.getElementsByClassName("btn-checkout")[0].style.display = "none";
+                    document.getElementsByClassName("emptyCart")[0].style.display = "block";
+                } else {
+                    document.getElementsByClassName("description")[0].style.display = "flex";
+                    document.getElementsByClassName("btn-checkout")[0].style.display = "block";
+                    document.getElementsByClassName("emptyCart")[0].style.display = "none";
+                }
+            } else {
+
+                document.getElementsByClassName("cart-open")[0].style.display = "none";
+            }
+        }
+
+
+        // console.log(125 * a)
+    </script>
+</body>
+
+</html>
